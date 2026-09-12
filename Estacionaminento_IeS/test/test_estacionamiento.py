@@ -9,6 +9,7 @@ lugares = [
     Lugar(3)
 ]
 estacionamiento = EstacionamientoService(lugares)
-vehiculo = Vehiculo("ABC-123", "Automovil")
-ticket = estacionamiento.registrar_entrada(vehiculo)
+vehiculo = Vehiculo("A", "Automovil")
+placa_reconocida = "A"
+ticket = estacionamiento.registrar_entrada(vehiculo, placa_reconocida)
 ticket.mostrar()

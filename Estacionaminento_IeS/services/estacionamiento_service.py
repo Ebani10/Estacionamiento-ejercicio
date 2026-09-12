@@ -5,7 +5,11 @@ class EstacionamientoService:
     def __init__(self, lugares):
         self.lugares = lugares
         self.tickets = []
-    def registrar_entrada(self, vehiculo):
+
+    def registrar_entrada(self, vehiculo, placa_reconocida):
+        if vehiculo.placa != placa_reconocida:
+            return None
+
         for lugar in self.lugares:
             if not lugar.ocupado:
                 lugar.ocupar()
@@ -16,7 +20,9 @@ class EstacionamientoService:
                 )
                 self.tickets.append(ticket)
                 return ticket
-            return None
+
+        return None
+
     def registrar_salida(self, ticket):
         if ticket in self.tickets:
             ticket.lugar.liberar()
