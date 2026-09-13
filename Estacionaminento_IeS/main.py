@@ -4,7 +4,7 @@ from services.estacionamiento_service import EstacionamientoService
 
 
 def main():
-	from Reconocedor_letras.reconocedor import reconocer_placa
+	from Reconocedor_letras.Reconocedor import reconocer_placa
 
 	lugares = [Lugar(1), Lugar(2), Lugar(3)]
 	estacionamiento = EstacionamientoService(lugares)
